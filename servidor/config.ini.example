@@ -1,0 +1,27 @@
+[Database]
+; "." ou "(local)" conecta via Shared Memory — funciona sem nenhuma configuração extra no SQL Server
+; "localhost" ou "NOME_MAQUINA" usa TCP/IP — exige habilitar o protocolo no SQL Server Configuration Manager:
+;   SQL Server Configuration Manager → SQL Server Network Configuration
+;   → Protocols for MSSQLSERVER → TCP/IP → Enable → reiniciar o serviço
+Server=.
+; Para instância nomeada, use: Server=.\SQLEXPRESS  ou  Server=MAQUINA\INSTANCIA
+Database=TarefasDB
+
+; Windows Authentication — usa a conta Windows atual, sem usuário/senha
+; Ideal para desenvolvimento local; basta ter acesso ao SQL Server instalado na máquina
+Trusted_Connection=True
+
+; SQL Server Authentication — descomente e preencha se não usar Windows Auth
+; Necessário quando o servidor é remoto ou compartilhado
+;Trusted_Connection=False
+;Username=seu_usuario
+;Password=sua_senha
+
+[Server]
+; Porta em que o serviço REST vai escutar
+Port=9000
+
+[Security]
+; Chave exigida no header X-API-Key em todas as requisições
+; Troque por qualquer string longa e difícil de adivinhar
+ApiKey=troque-por-uma-chave-segura-aqui

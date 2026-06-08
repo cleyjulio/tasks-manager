@@ -1,0 +1,11 @@
+{
+	"name": "servidor",
+	"description": "Serviço REST para gerenciamento de tarefas",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "Servidor.dpr",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/horse": "^3.2.0"
+	}
+}
